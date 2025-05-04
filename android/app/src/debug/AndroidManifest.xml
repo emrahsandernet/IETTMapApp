@@ -12,5 +12,18 @@
         <meta-data
       android:name="com.google.android.geo.API_KEY"
       android:value="AIzaSyAxv8zNyoGonmK2K02zIuwvZMsAM8p8TsQ"/>
+      
+        <receiver android:name="com.transistorsoft.tsbackgroundfetch.BootReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:replace="android:exported">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
     </application>
+
 </manifest>
